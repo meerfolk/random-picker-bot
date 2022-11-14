@@ -3,10 +3,13 @@ version: "2"
 services:
   redis:
     image: redis:7.0.5-alpine
-    ports:
-      - "6379:6379"
     volumes:
       - "redis:/data"
+
+  bot:
+    image: picking_daily_anekdot
+    env_file:
+      - "bot.env"
 
 volumes:
   redis:

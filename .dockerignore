@@ -3,3 +3,4 @@ Dockerfile
 .git
 docker-compose.yaml
 run
+bot.env

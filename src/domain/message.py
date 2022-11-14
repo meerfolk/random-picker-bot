@@ -17,7 +17,6 @@ def addJoker(command: str):
     return joker
 
 def handleMessages(messages):
-    print(messages)
     for message in messages:
         if not 'message' in message:
             continue
@@ -34,7 +33,6 @@ def handleMessages(messages):
         messageId: str = message['message']['message_id']
 
         if not bot.isMessageFromAdmin(chatId, message['message']['from']['id']):
-            bot.replyToMessage(chatId, messageId, 'You are not admin')
             continue
 
         command: str = bot.trimBotName(text)
