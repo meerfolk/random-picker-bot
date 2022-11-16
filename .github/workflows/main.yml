@@ -7,6 +7,7 @@ on:
 jobs:
   push-to-yct:
     runs-on: ubuntu-latest
+    environment: yandex-cloud
     steps:
       - uses: actions/checkout@v3
       - uses: raisultan/ycr-push@main
