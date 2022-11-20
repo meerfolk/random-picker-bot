@@ -18,7 +18,6 @@ def addJoker(command: str):
     return joker
 
 def handleMessages(messages):
-    print(f'handleMessages: {messages}')
     for message in messages:
         if not 'message' in message:
             continue
