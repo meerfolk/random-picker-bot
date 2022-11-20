@@ -2,6 +2,7 @@ from functools import reduce
 
 from domain import bot
 from infrastructure import storage
+from domain.commands import add_item
 
 def __getNextJokerMessage(joker, nextJokers):
     return f'''
@@ -12,11 +13,12 @@ def __getNextJokerMessage(joker, nextJokers):
 def addJoker(command: str):
     joker = command.split(' ', 1)[1]
 
-    storage.addJoker(joker)
+    add_item.execute(joker)
 
     return joker
 
 def handleMessages(messages):
+    print(f'handleMessages: {messages}')
     for message in messages:
         if not 'message' in message:
             continue
